@@ -2,7 +2,7 @@
 DELETE FROM animals
 WHERE id = 6;
 
--- TRANSACTIONS
+-- ALL TRANSACTIONS
 
 -- Begin transaction 1
 BEGIN;
@@ -28,11 +28,29 @@ UPDATE animals SET species = 'pokemon' WHERE species is NULL;
 COMMIT;
 SELECT * FROM animals;
 
+
 -- Begin transaction 3
 BEGIN;
 DELETE FROM animals;
 SELECT * FROM animals;
 ROLLBACK;
 
+
 -- Begin transaction 4
 BEGIN;
+
+DELETE FROM animals
+WHERE date_of_birth > '2022-01-01';
+
+-- create savepoint
+SAVEPOINT SP1;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+
+ROLLBACK TO SP1;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+
+COMMIT;
