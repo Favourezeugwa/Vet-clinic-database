@@ -126,7 +126,7 @@ INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
   '2020-08-10'
 );
 
-INSERT into visits (animals_id, vets_id, date_of_visits) VALUES (
+INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
   (SELECT id FROM animals WHERE name = 'Plantmon'),
   (SELECT id FROM vets WHERE name = 'Maisy Smith'),
   '2020-04-07'
@@ -165,13 +165,13 @@ INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
 INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
   (SELECT id FROM animals WHERE name = 'Boarmon'),
   (SELECT id FROM vets WHERE name = 'Maisy Smith'),
-  '2019-02-27'
+  '2020-02-27'
 );
 
 INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
   (SELECT id FROM animals WHERE name = 'Boarmon'),
   (SELECT id FROM vets WHERE name = 'Maisy Smith'),
-  '2019-08-03'
+  '2020-03-08'
 );
 
 INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
@@ -183,6 +183,11 @@ INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
 INSERT INTO visits (animals_id, vets_id, date_of_visit) VALUES (
   (SELECT id FROM animals WHERE name = 'Blossom'),
   (SELECT id FROM vets WHERE name = 'William Tatcher'),
-  '2019-01-11'
+  '2021-01-11'
 );
 
+-- change date_of_visit to from 2019-01-11 to 2021-01-11
+UPDATE visits SET date_of_visit = '2021-01-11' WHERE animals_id = 10 AND vets_id = 1;
+
+-- REMOVE ALL DATA FROM VISITS
+DELETE FROM visits;
