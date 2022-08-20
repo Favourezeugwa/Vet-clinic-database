@@ -53,7 +53,9 @@ ALTER TABLE animals ADD CONSTRAINT fk_animals_owners FOREIGN KEY (owner_id) REFE
 
 
 
-/* PROJECT - ADD "JOIN TABLE" FOR VISITS */
+/* PROJECT DAY 4 - ADD "JOIN TABLE" FOR VISITS */
+
+-- create a new table for vets
 CREATE TABLE vets (
   id INT NOT NULL GENERATED ALWAYS AS IDENTITY,
   name VARCHAR(250) NOT NULL,
