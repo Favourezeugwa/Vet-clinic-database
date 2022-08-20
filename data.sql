@@ -36,11 +36,6 @@ UPDATE animals SET owner_id = 3 WHERE name='Devimon' OR name='plantmon';
 UPDATE animals SET owner_id = 4 WHERE name='Charmander' OR name='Squirtle' OR name='Blossom';
 UPDATE animals SET owner_id = 5 WHERE name='Angemon' OR name='Boarmon';
 
--- id 1 = Sam Smith owns Agumon
--- id 2 = Jennifer Orwell owns Gabumon and Pikachu.
--- id 3 = Bob owns Devimon and Plantmon.
--- id 4 = Melody Pond owns Charmander, Squirtle, and Blossom.
--- id 5 = Dean Winchester owns Angemon and Boarmon.
 
 
 /* PROJECT DAY 4 */
@@ -55,11 +50,12 @@ INSERT INTO vets (name, age, date_of_graduation) VALUES ('Jack Harkness', 38, '2
 /* INSERT DATA FOR SPECIALIZATIONS */
 
 -- William Tatcher is specialized in Pokemon.
-INSERT INTO specializations (vet_id, species_id) VALUES (1, 1);
+INSERT INTO specializations (species_id, vets_id) VALUES (1, 1);
 
 -- Stephanie Mendez is specialized in Digimon and Pokemon.
-INSERT INTO specializations (vet_id, species_id) VALUES (2, 1);
-INSERT INTO specializations (vet_id, species_id) VALUES (2, 2);
+INSERT INTO specializations (species_id, vets_id) VALUES (2, 1);
+INSERT INTO specializations (species_id, vets_id) VALUES (2, 2);
 
 -- Jack Harkness is specialized in Digimon.
-INSERT INTO specializations (vet_id, species_id) VALUES (3, 2);
+-- INSERT INTO specializations (species_id, vets_id) VALUES (4, 2);
+INSERT INTO specializations (species_id, vets_id) VALUES ((SELECT id FROM species WHERE name = 'Digimon'), (SELECT id FROM vets WHERE name = 'Jack Harkness'));
