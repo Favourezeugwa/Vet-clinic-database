@@ -152,3 +152,9 @@ INNER JOIN species ON species.id = animals.species_id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY visits DESC;
+
+
+/* PROJECT - DATABASE PERFORMANCE AUDIT DAY 1 */
+EXPLAIN ANALYZE SELECT COUNT(*) FROM owners WHERE animals_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
