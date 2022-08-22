@@ -201,6 +201,3 @@ INSERT INTO visits (animals_id, vets_id, date_of_visit) SELECT * FROM (SELECT id
 
 -- This will add 2.500.000 owners with full_name = 'Owner <X>' and email = 'owner_<X>@email.com' (~2min approx.)
 INSERT INTO owners (full_name, email) SELECT 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
-
--- Checking the running speed
-EXPLAIN ANALYZE SELECT COUNT(*) FROM visits WHERE animals_id = 4;
