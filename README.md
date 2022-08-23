@@ -2,6 +2,13 @@
 
 > This project uses a relational database to create the initial data structure for a vet clinic. This includes a table to store animals' information, insert some data into it, and query it.
 
+## Schema diagram
+![](Screenshots/schema-vet-clinic.PNG)
+
+## Built with
+- PostgreSQL
+- DrawSQL
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
