@@ -158,10 +158,10 @@ ORDER BY visits DESC;
 
 -- before decreasing the execution time of the query.
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits WHERE animals_id = 4;
-EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2;
+EXPLAIN ANALYZE SELECT * FROM visits WHERE vets_id = 2;
 EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
 
 -- (after) create index to help decrease the execution time of the query. 
-CREATE INDEX animals_id_idx ON visits(animals_id ASC);
+CREATE INDEX animals_id_index ON visits(animals_id ASC);
 CREATE INDEX vets_id_index ON visits(vets_id ASC);
 CREATE INDEX email_id_index ON owners(email ASC);
