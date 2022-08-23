@@ -14,7 +14,7 @@ CREATE TABLE medical_histories (
   admitted_at TIMESTAMP NOT NULL,
   patient_id INT NOT NULL,
   status VARCHAR(250) NOT NULL,
-  FOREIGN KEY (patient_id) REFERENCES species(id);
+  FOREIGN KEY (patient_id) REFERENCES patients(id);
   PRIMARY KEY(id)
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE invoices (
   payed_at TIMESTAMP NOT NULL,
   medical_history_id INT NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (medical_history_id) REFERENCES medical_history(id)
+  FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id)
 );
 
 -- invoice_items
